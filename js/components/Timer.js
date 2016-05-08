@@ -53,8 +53,7 @@ const Timer = props$ => {
       }
   )
   return {
-    DOM: vtree$,
-    Wad: Observable.just('C4')
+    DOM: vtree$
   }
 }
 
