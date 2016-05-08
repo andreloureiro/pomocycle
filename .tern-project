@@ -1,0 +1,10 @@
+{
+  "ecmaVersion": 6,
+  "libs": [
+    "browser"
+  ],
+  "loadEagerly": [
+    "./js/**/*.js",
+    "./node_modules/rx/dist/rx.all.js"
+  ]
+}

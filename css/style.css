@@ -1,0 +1,66 @@
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+#root {
+  height: 100%;
+}
+.pomocycle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  min-height: 100%;
+  background-color: #F44336;
+}
+.timer {
+  flex: 1;
+  position: relative;
+}
+.timer .timer-clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.timer .timer-text {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+  font-weight: 100;
+  color: white;
+}
+.stages, .control-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 12.5em;
+  padding: 1em 0;
+  overflow: hidden;
+}
+.stages .stages-item {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+}
+.control-btns .btn {
+  height: 4em;
+  padding: 1em 1.6em;
+  border-radius: 2em;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+}
