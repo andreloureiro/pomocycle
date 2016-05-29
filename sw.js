@@ -1,10 +1,9 @@
 const cacheName = 'pomocycle-v1'
 const filesToCache = [
-  '/',
-  '/index.html',
-  '/dist/bundle.js',
-  '/css/style.css',
-  '/images/icon.png'
+  'index.html',
+  'dist/bundle.js',
+  'css/style.css',
+  'images/icon.png'
 ]
 
 self.addEventListener('install', e => {
