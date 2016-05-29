@@ -10,11 +10,11 @@ const drivers = {
   Wad: makeWadDriver()
 };
 
-const {sinks, sources} = run( App, drivers );
+const {sinks, sources} = run(App, drivers);
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const app = require('./components/App' ).default;
+  module.hot.accept('./root', () => {
+    const app = require('./root' ).default;
     restart(app, drivers, {sinks, sources}, isolate);
   });
 }

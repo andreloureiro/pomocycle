@@ -1,6 +1,6 @@
 import {Observable} from 'rx'
 import {div, h1, svg} from '@cycle/dom'
-import {pomodoroTime, shortBreakTime, longBreakTime} from '../config'
+import {pomodoroTime, shortBreakTime, longBreakTime} from '../root/model'
 
 const toMMSS = ms => {
   let minutes = Math.floor((ms / 1000) / 60)

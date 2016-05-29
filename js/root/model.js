@@ -1,8 +1,8 @@
 import {Observable} from 'rx'
 
-const pomodoroTime = 1500000
-const shortBreakTime = 300000
-const longBreakTime = 900000
+export const pomodoroTime = 1500000
+export const shortBreakTime = 300000
+export const longBreakTime = 900000
 const startBeep = sound => {
   sound.play({ pitch : 'Db5'})
 }
