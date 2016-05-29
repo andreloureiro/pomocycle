@@ -2,15 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Pomocycle">
+  <link rel="apple-touch-icon" href="images/icon.png">
+  <meta name="msapplication-TileImage" content="images/icon.png">
+  <meta name="msapplication-TileColor" content="#F44336">
   <title>Pomocycle</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <meta name="theme-color" content="#F44336">
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="icon" sizes="192x192" href="images/icon.png">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica', Arial, sans-serif;
+    }
+    #root {
+      height: 100%;
+      overflow: hidden;
+    }
+    .pomocycle {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: stretch;
+      min-height: 100%;
+      background-color: #F44336;
+    }
+    .timer {
+      flex: 1;
+      position: relative;
+    }
+    .timer .timer-clock {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .timer .timer-text {
+      position: absolute;
+      margin: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 5em;
+      font-weight: 100;
+      color: white;
+    }
+    .stages, .control-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 12.5em;
+      padding: 1em 0;
+      overflow: hidden;
+    }
+    .stages .stages-item {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      align-items: center;
+    }
+    .control-btns .btn {
+      height: 4em;
+      padding: 1em 1.6em;
+      border-radius: 2em;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: white;
+      background: transparent;
+      border: 2px solid white;
+      outline: none;
+    }
+  </style>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root"><div class="pomocycle"><div class="timer"><div class="timer-clock"><svg width="420" height="420"><circle cx="210" cy="210" r="200" style="fill: transparent; stroke: white; stroke-width: 10; stroke-dasharray: 0, 1.5e+06; transition: stroke-dasharray 1s linear;"></circle></svg></div><h1 class="timer-text">00:00</h1></div><div class="stages"><div class="stages-item"><svg width="34" height="34"><circle cx="17" cy="17" r="10" style="fill: transparent; stroke: rgb(183, 28, 28); transition: all 300ms cubic-bezier(0.4, 0, 0, 1);"></circle><path d="M 15, 10
+          L 15, 10
+            19, 14
+          M 19, 14
+          L 15, 14
+            19, 10" style="fill: transparent; stroke: rgb(183, 28, 28); transition: all 300ms cubic-bezier(0.4, 0, 0, 1);"></path></svg></div><div class="stages-item"><svg width="34" height="34"><circle cx="17" cy="17" r="10" style="fill: transparent; stroke: rgb(183, 28, 28); transition: all 300ms cubic-bezier(0.4, 0, 0, 1);"></circle><path d="M 15, 10
+          L 15, 10
+            19, 14
+          M 19, 14
+          L 15, 14
+            19, 10" style="fill: transparent; stroke: rgb(183, 28, 28); transition: all 300ms cubic-bezier(0.4, 0, 0, 1);"></path></svg></div><div class="stages-item"><svg width="34" height="34"><circle cx="17" cy="17" r="10" style="fill: transparent; stroke: rgb(183, 28, 28); transition: all 300ms cubic-bezier(0.4, 0, 0, 1);"></circle><path d="M 15, 10
+          L 15, 10
+            19, 14
+          M 19, 14
+          L 15, 14
+            19, 10" style="fill: transparent; stroke: rgb(183, 28, 28); transition: all 300ms cubic-bezier(0.4, 0, 0, 1);"></path></svg></div><div class="stages-item"><svg width="34" height="34"><circle cx="17" cy="17" r="10" style="fill: transparent; stroke: rgb(183, 28, 28); transition: all 300ms cubic-bezier(0.4, 0, 0, 1);"></circle><path d="M 15, 10
+          L 15, 10
+            19, 14
+          M 19, 14
+          L 15, 14
+            19, 10" style="fill: transparent; stroke: rgb(183, 28, 28); transition: all 300ms cubic-bezier(0.4, 0, 0, 1);"></path></svg></div></div><div class="control-btns"><div></div><button class="btn" id="startPomodoro">POMODORO</button><div></div><div></div></div></div></div>
   <script src="dist/bundle.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('./sw.js')
+        .then(() => {console.log('Service Worker registered.')})
+    }
+  </script>
 </body>
 </html>
